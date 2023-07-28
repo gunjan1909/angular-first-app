@@ -8,6 +8,7 @@ import { AppComponent } from "./app.component";
   imports: [BrowserModule],
   providers: [],
   //components passed for angular to bootstrap them
+  //root component, all other components goes inside it
   bootstrap: [AppComponent],
 })
 export class AppModule {}

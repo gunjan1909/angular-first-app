@@ -1,8 +1,9 @@
 import { enableProdMode } from "@angular/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-
-import { AppModule } from "./app/app.module";
 import { environment } from "./environments/environment";
+
+//The app module is the root module of the application
+import { AppModule } from "./app/app.module";
 
 if (environment.production) {
   enableProdMode();
