@@ -7,12 +7,20 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 import { ServerComponent } from "./server/server.component";
-import { ServersComponent } from './servers/servers.component';
+import { ServersComponent } from "./servers/servers.component";
+import { WarningComponent } from "./warningAlert/warning.component";
+import { SuccessComponent } from "./successAlert/success.component";
 
 // decorator
 @NgModule({
   //register new component here
-  declarations: [AppComponent, ServerComponent, ServersComponent],
+  declarations: [
+    AppComponent,
+    ServerComponent,
+    ServersComponent,
+    WarningComponent,
+    SuccessComponent,
+  ],
   //allows us to add other modules
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
