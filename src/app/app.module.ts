@@ -31,5 +31,6 @@ import { SuccessComponent } from "./successAlert/success.component";
   bootstrap: [AppComponent],
 })
 
-//empty typescript class
+//empty typescript class,
+//root app module
 export class AppModule {}
