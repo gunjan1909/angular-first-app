@@ -29,7 +29,9 @@ export class ServersComponent implements OnInit {
     //(<HTMLButtonElement>event.target).disabled = true;
     this.serverCreated = true;
     this.serverCreationStatus =
-      "Server was created! Name is " + this.serverName;
+      this.serverName === ""
+        ? ""
+        : "Server was created! Name is " + this.serverName;
   }
 
   onUpdateServerName(event: Event) {

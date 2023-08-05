@@ -22,8 +22,9 @@
 <button [disabled]="!allowNewServer" class="btn btn-primary" (click)="onCreateServer($event)">Add Server</button>
 <!-- <p>{{serverCreationStatus}}</p> -->
 
-<!-- using ngIf directive -->
-<p *ngIf="serverCreated">Server was created, server names is {{serverName}}</p>
+<!-- using ngIf directive: displays if serverCreated is true, else no display -->
+<p *ngIf="serverCreated">{{serverCreationStatus}}</p>
+<p *ngIf="serverCreated" [innerText]="serverCreationStatus"></p>
 
 <app-server></app-server>
 <app-server></app-server>
