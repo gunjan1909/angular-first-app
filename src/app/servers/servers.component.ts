@@ -15,10 +15,11 @@ export class ServersComponent implements OnInit {
   serverCreationStatus: string = "No server was created";
   serverName: string = "";
   serverCreated: boolean = false;
+  servers = ["Testserver", "Testserver2"];
 
   constructor() {
+    //disable the button for 4 sec once page loads
     setTimeout(() => {
-      //loop to true and false every 4 sec
       this.allowNewServer = true;
     }, 4000);
   }
@@ -27,11 +28,22 @@ export class ServersComponent implements OnInit {
 
   onCreateServer(event: Event) {
     //(<HTMLButtonElement>event.target).disabled = true;
-    this.serverCreated = true;
+    /*this.serverCreated = true;
     this.serverCreationStatus =
       this.serverName === ""
         ? ""
-        : "Server was created! Name is " + this.serverName;
+        : "Server was created! Name is " + this.serverName;*/
+
+    // click the button and add the p tag only if there is some input given
+    if (this.serverName !== "") {
+      this.serverCreated = true;
+      this.servers.push(this.serverName);
+      this.serverCreationStatus =
+        "Server was created! Name is " + this.serverName;
+    } else {
+      this.serverCreated = false;
+      this.serverCreationStatus = "No server was created";
+    }
   }
 
   onUpdateServerName(event: Event) {

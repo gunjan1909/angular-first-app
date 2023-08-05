@@ -23,9 +23,24 @@
 <!-- <p>{{serverCreationStatus}}</p> -->
 
 <!-- using ngIf directive: displays if serverCreated is true, else no display -->
+<!-- both <p></p> same thing -->
 <p *ngIf="serverCreated">{{serverCreationStatus}}</p>
-<p *ngIf="serverCreated" [innerText]="serverCreationStatus"></p>
+<!-- <b *ngIf="serverCreated">Property binding ngif :</b>
+<p *ngIf="serverCreated" [innerText]="serverCreationStatus"></p> -->
+<!-- using ngIf else condition and local binding -->
+<!-- here it shows serverCreationStatus if ngIf is true, else the ng-template with #noServer -->
+<!-- <p *ngIf="serverCreated; else noServer"><b>using ngif else</b>{{serverCreationStatus}}</p>
+<ng-template #noServer>
+   <p>No server was created!</p>
+</ng-template> -->
 
+<!-- <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server>
+<app-server></app-server>
+<app-server></app-server> -->
+
+<!-- using ngfor -->
+<!-- for now the data is not passed in the component -->
+<app-server *ngFor="let server of servers"></app-server>
